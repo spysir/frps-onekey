@@ -1,10 +1,10 @@
-#! /bin/bash
+#!/bin/bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 ###export###
 export PATH
-export FRPS_VER=0.33.0
+export FRPS_VER=0.35.1
 export FRPS_INIT="https://raw.githubusercontent.com/MvsCode/frps-onekey/master/frps.init"
-export aliyun_download_url="https://code.aliyun.com/mvscode/frps-onekey/raw/master"
+export aliyun_download_url="https://code.aliyun.com/MvsCode/frps-onekey/raw/master"
 export github_download_url="https://github.com/fatedier/frp/releases/download"
 #======================================================================
 #   System Required:  CentOS Debian Ubuntu or Fedora(32bit/64bit)
@@ -13,7 +13,7 @@ export github_download_url="https://github.com/fatedier/frp/releases/download"
 #   Mender : MvsCode
 #======================================================================
 program_name="frps"
-version="20/04/27"
+version="210125"
 str_program_dir="/usr/local/${program_name}"
 program_init="/etc/init.d/${program_name}"
 program_config_file="frps.ini"
@@ -85,7 +85,7 @@ get_char(){
 }
 # Check OS
 checkos(){
-    if  grep -Eqi "CentOS" /etc/issue || grep -Eq "CentOS" /etc/*-release; then
+    if   grep -Eqi "CentOS" /etc/issue || grep -Eq "CentOS" /etc/*-release; then
         OS=CentOS
     elif grep -Eqi "Debian" /etc/issue || grep -Eq "Debian" /etc/*-release; then
         OS=Debian
@@ -169,11 +169,11 @@ fun_randstr(){
     echo ${strRandomPass}
 }
 fun_getServer(){
-    def_server_url="github"
+    def_server_url="aliyun"
     echo ""
     echo -e "Please select ${program_name} download url:"
-    echo -e "[1].aliyun "
-    echo -e "[2].github (default)"
+    echo -e "[1].aliyun (default)"
+    echo -e "[2].github "
     read -e -p "Enter your choice (1, 2 or exit. default [${def_server_url}]): " set_server_url
     [ -z "${set_server_url}" ] && set_server_url="${def_server_url}"
     case "${set_server_url}" in

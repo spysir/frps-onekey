@@ -1,5 +1,5 @@
 
-Frps服务端一键配置脚本，Frp最新版本：0.33.0
+Frps服务端一键配置脚本，Frp最新版本：0.35.1
 ===========
 
 *Frp 是一个高性能的反向代理应用，可以帮助您轻松地进行内网穿透，对外网提供服务，支持 tcp, http, https 等协议类型，并且 web 服务支持根据域名进行路由转发。*
@@ -7,27 +7,23 @@ Frps服务端一键配置脚本，Frp最新版本：0.33.0
 * 详情：fatedier (https://github.com/fatedier/frp)
 * 此脚本原作者：clangcn (https://github.com/clangcn/onekey-install-shell)
 
-## Note
-最近在github发现新的frps脚本，服务端的管理界面由官方替换成可操作性，就是直接在WEB进行Token，Submisson的配置。我没使用过，有兴趣的可以到这了解：https://github.com/Zo3i/frpMgr
-
-之前就有人想要自定义服务端的版本，其实是推荐大家跟随到最新版本，各有所取吧，有打算加入这个功能。
-
 ## Frps-Onekey-Install-Shell For CentOS/Debian/Ubuntu/Fedora (32bit/64bit)
 
 ### Install（安装）
 
-#### Github
-```Bash
-wget https://raw.githubusercontent.com/MvsCode/frps-onekey/master/install-frps.sh -O ./install-frps.sh
-chmod 700 ./install-frps.sh
-./install-frps.sh install
-```
 #### Aliyun
 ```Bash
 wget https://code.aliyun.com/MvsCode/frps-onekey/raw/master/install-frps.sh -O ./install-frps.sh
 chmod 700 ./install-frps.sh
 ./install-frps.sh install
 ```
+#### Github
+```Bash
+wget https://raw.githubusercontent.com/MvsCode/frps-onekey/master/install-frps.sh -O ./install-frps.sh
+chmod 700 ./install-frps.sh
+./install-frps.sh install
+```
+
 
 ### Uninstall（卸载）
 ```Bash
@@ -45,6 +41,56 @@ Frps onkey-install-shell Changelog<br>Frp版本更新说明
 ---------------------------------------
 
  <!-- vim-markdown-toc GFM -->
+
+* ## [v0.35.1 [2021/01/25]](#v0.35.1[2021/01/25])
+    * ### FIX
+     > Reduce binary file size.
+
+* ## Shell Upadte [2021/01/24]
+    * ### Amend
+     > Aliyun download url replace by Gitee download url
+
+* ## [v0.35.0 [2021/01/20]](#v0.35.0[2021/01/20])
+    * ### NEW
+     > Server Plugin supports HTTPS.
+
+    * ### FIX
+     > Fix IPv6 address parse problem.
+
+     > HTTP type proxy can't handle websocket protocol due to error Connection header value.
+
+* ## [v0.34.3 [2020/11/20]](#v0.34.2[2020/11/20])
+    * ### NEW
+     > Command line parameters support enable_prometheus.
+
+* ## [v0.34.2 [2020/11/12]](#v0.34.2[2020/11/12])
+    * ### FIX
+     > Stream data transfer delay(e.g. chunked data) for HTTP type proxy.
+
+* ## [v0.34.1 [2020/10/01]](#v0.34.1[2020/10/01])
+    * ### NEW
+     > Support NTLM protocol for http proxy to connect frps.
+
+     > Official docker image support on DockerHub and Github registry.
+
+    * ### FIX
+     > Fix a dashboard stats data lost problem after client reconnect more than 7 days.
+
+     > Fix TLS certificate verification failed.
+
+
+* ## [v0.34.0 [2020/09/19]](#v0.34.0[2020/09/19])
+    * ### NEW
+     > Support TLS certificate and mutual TLS authentication.
+
+     > Support set max UDP package size, default is 1500.
+
+     > New e2e test framework.
+
+    * ### FIX
+     > UDP and SUDP proxy don't support compression and encrytion.
+
+     > Call server plugins in fixed order.
 
 * ## [v0.33.0 [2020/04/27]](#v0.33.0[2020/04/27])
     * ### NEW
