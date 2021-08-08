@@ -1,5 +1,5 @@
 
-Frps服务端一键配置脚本，Frp最新版本：0.35.1
+Frps服务端一键配置脚本，Frp最新版本：0.37.1
 ===========
 
 *Frp 是一个高性能的反向代理应用，可以帮助您轻松地进行内网穿透，对外网提供服务，支持 tcp, http, https 等协议类型，并且 web 服务支持根据域名进行路由转发。*
@@ -41,6 +41,47 @@ Frps onkey-install-shell Changelog<br>Frp版本更新说明
 ---------------------------------------
 
  <!-- vim-markdown-toc GFM -->
+
+* ## [v0.37.1 [2021/08/04]](#v0.37.1[2021/08/04])
+    * ### FIX
+     > Plugin https2https not work.
+
+     > context canceled problem for http_proxy plugin when multiple requests reuse same connection.
+
+     > In some cases, frps can't get server name for https proxy.
+
+* ## [v0.37.0 [2021/06/03]](#v0.37.0[2021/06/03])
+    * ### NEW
+     > frpc add subcommand verify to validate configures before running.
+     
+     > frpc support includes option to split multiple proxy configs into different files.
+     
+     > Support sudp in dashboard.
+
+    * ### FIX
+     > Use empty string as default value for dashboard user and password.
+     
+     > login_fail_exit is not valid when protocol = kcp.
+     
+* ## [v0.36.2 [2021/03/22]](#v0.36.2[2021/03/22])
+    * ### IMPROVE
+     > Support reverseproxy to dashboard with additional parts in path.
+
+    * ### FIX
+     > Fix logic error when parsing configs.
+
+* ## [v0.36.1 [2021/03/19]](#v0.36.1[2021/03/19])
+    * ### FIX
+     > Fix bind_udp_port listen on error port.
+
+* ## [v0.36.0 [2021/03/17]](#v0.36.0[2021/03/17])
+    * ### NEW
+     > New plugin https2https.
+
+     > frpc supports tls_server_name to override the default value from server_addr.
+
+    * ### IMPROVEMENT
+     > Increase reconnect frequency if it occurs an network error between frpc and frps
 
 * ## [v0.35.1 [2021/01/25]](#v0.35.1[2021/01/25])
     * ### FIX
